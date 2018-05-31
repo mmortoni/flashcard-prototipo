@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./node_modules/tether/dist/js/tether.min.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<h1>New Deck</h1>
+  
+	<div class="container">     
+		<div class="row">
+			<div class="col-sm-6">
+				<label for="title-quiz">Title</label>
+				<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon3"><h3>Title</h3></span>
+				  </div>
+				  <input type="text" class="form-control" id="title-quiz" aria-describedby="basic-addon3">
+				</div>				
+			</div>
+		</div>
+		<br/>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="input-group mb-3">
+				  <div class="input-group-prepend">
+					<button class="btn btn-outline-secondary" type="button" onclick="location.href = 'editDeck.html';">Create Deck</button>
+					<button class="btn btn-outline-secondary" type="button" onclick="location.href = 'index.html';">Cancel</button>
+				  </div>
+				  <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

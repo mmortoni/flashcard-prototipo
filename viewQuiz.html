@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link href="./node_modules/bootstrap-toggle/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/toggle_switch.css">
+ 
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./node_modules/tether/dist/js/tether.min.js"></script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Titulo Quiz</h1>
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="card text-center">
+					<div class="card-header">Questions</div>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="input-group">
+								  <div class="input-group-prepend">
+									<span class="input-group-text">Question #1</span>
+								  </div>
+								  <textarea class="form-control" aria-label="With textarea"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+								<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAnswer" aria-expanded="false" aria-controls="collapseExample">Show Answer</button>
+						</div>
+						<hr>
+						<div class="collapse" id="collapseAnswer">
+							<div class="input-group">
+							  <div class="input-group-prepend">
+								<span class="input-group-text">Response #1</span>
+							  </div>
+							  <textarea class="form-control" aria-label="With textarea"></textarea>
+							</div>
+							<div class="onoffswitch3">
+								<input type="checkbox" name="onoffswitch3" class="onoffswitch3-checkbox" id="myonoffswitch3" checked>
+								<label class="onoffswitch3-label" for="myonoffswitch3">
+									<span class="onoffswitch3-inner">
+										<span class="onoffswitch3-active"><span class="onoffswitch3-switch">Correct</span></span>
+										<span class="onoffswitch3-inactive"><span class="onoffswitch3-switch">Incorrect</span></span>
+									</span>
+								</label>
+							</div>
+						</div>
+						<hr>
+						<div class="collapse" id="collapseEndQuestions">
+							<h3>Good job!</h3>
+							<h3>You just studied 10 terms!</h3>
+							<img class="card-img-top" src="./img/grafico.png" alt="Card image cap">
+							<h3>8 Right</h3>
+							<h3>2 Wrong</h3>
+							<button class="btn btn-primary" type="button" onclick="restartQuiz();">Restart Quiz</button>
+							<button class="btn btn-primary" type="button" onclick="location.href = 'viewDeck.html';">Back to Deck</button>
+						</div>
+					</div>
+					<div class="card-footer text-muted">
+					  <span class="badge badge-primary" id="current">1</span>
+					  of
+					  <span class="badge badge-success">10</span>
+					</div>
+				</div>			
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-8">
+				<button class="btn btn-primary" type="button" onclick="decrement();"><</button>
+				<button class="btn btn-primary" type="button" onclick="increment();">></button>
+				<button class="btn btn-outline-secondary" type="button" onclick="location.href = 'viewDeck.html';">Cancel</button>
+			</div>
+		</div>
+	</div>
+<script>
+	var question = 1;
+	function increment(){
+		if(question < 10) question++;
+		document.getElementById("current").innerHTML = question;
+		
+		if(question == 10) $('#collapseEndQuestions').collapse('show');
+		if(question != 10) $('#collapseEndQuestions').collapse('hide');
+		
+		$('#collapseAnswer').collapse('hide');
+	}
+	function decrement(){
+		if(question == 10) $('#collapseEndQuestions').collapse('hide');
+	
+		if(question > 1) question--;
+		document.getElementById("current").innerHTML = question;
+		
+		$('#collapseAnswer').collapse('hide');
+	}
+	function restartQuiz(){
+		question = 1;
+		document.getElementById("current").innerHTML = question;
+		$('#collapseEndQuestions').collapse('hide');
+	}
+</script>
+	
+</body>
+</html>

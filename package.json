@@ -1,0 +1,17 @@
+{
+  "name": "prototipo-flashcard",
+  "version": "1.0.0",
+  "description": "Mobile Flashcard.",
+  "main": "index.html",
+  "repository": {
+    "url": "https://github.com/mmortoni/flashcard-prototipo.git",
+    "type": "git"
+  },
+  "author": "Mauro Cardoso Mortoni <mmortoni@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "bootstrap-toggle": "^2.2.2",
+    "font-awesome": "^4.7.0"
+  }
+}
